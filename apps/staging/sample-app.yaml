@@ -2,12 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: backend-service
+  name: sample-app
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: staging
+  project: sample-staging
   source:
     path: config/staging/backend-service
     repoURL: https://github.com/HendrikStone/argocd_playground
@@ -18,7 +18,7 @@ spec:
         - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: staging
+    namespace: sample-ns
   syncPolicy:
     automated:
       prune: true
