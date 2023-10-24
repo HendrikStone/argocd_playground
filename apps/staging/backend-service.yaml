@@ -1,0 +1,25 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-service
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: staging
+  source:
+    path: config/staging/backend-service
+    repoURL: https://github.com/HendrikStone/argocd_playground
+    targetRevision: HEAD
+    helm:
+      releaseName: backend-service
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: lead
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
