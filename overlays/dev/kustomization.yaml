@@ -10,10 +10,6 @@ nameSuffix: -dev
 
 patches:
 - path: deployment_env.yaml
-  target:
-    kind: Deployment
-    name: sample-app
-    namespace: sample-app-dev
 
 # patchesStrategicMerge:
 # - deployment_env.yaml
