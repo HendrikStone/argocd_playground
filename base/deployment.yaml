@@ -13,15 +13,15 @@ spec:
         app: sample-app
     spec:
       containers:
-      - name: sample-backend
+      - name: sample-app
         image: ghcr.io/hendrikstone/argocd_service_playground:0.0.1
         ports:
         - containerPort: 3000
         tty: true
         stdin: true
         env:
-          - name: key
-            value: base
+        - name: key
+          value: base
         resources:
           limits:
             memory: "64Mi"
