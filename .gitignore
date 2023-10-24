@@ -1,0 +1,4 @@
+.DS_STORE
+keys
+.envrc
+.decrypted~secrets.*
