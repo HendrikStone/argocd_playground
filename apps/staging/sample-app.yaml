@@ -9,11 +9,11 @@ metadata:
 spec:
   project: sample-app-staging
   source:
-    path: config/staging/backend-service
+    path: config/staging/sample-app
     repoURL: https://github.com/HendrikStone/argocd_playground
     targetRevision: HEAD
     helm:
-      releaseName: backend-service
+      releaseName: sample-app
       valueFiles:
         - values.yaml
   destination:
