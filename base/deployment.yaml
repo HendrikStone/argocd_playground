@@ -13,12 +13,12 @@ spec:
         app: sample-app
     spec:
       containers:
-      - name: sample-app
+      - name: backend-service
         image: ghcr.io/hendrikstone/argocd_service_playground:0.0.1
         ports:
-        - containerPort: 3000
-        tty: true
-        stdin: true
+        - name: http
+          containerPort: 3000
+          protocol: TCP
         env:
         - name: key
           value: base
