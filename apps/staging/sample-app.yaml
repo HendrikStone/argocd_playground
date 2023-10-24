@@ -13,7 +13,6 @@ spec:
     repoURL: https://github.com/HendrikStone/argocd_playground
     targetRevision: HEAD
     helm:
-      releaseName: sample-app
       valueFiles:
         - values.yaml
   destination:
@@ -21,5 +20,5 @@ spec:
     namespace: sample-ns
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false
+      selfHeal: false
