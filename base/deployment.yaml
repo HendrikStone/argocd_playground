@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+      - name: sample-backend
+        image: ghcr.io/hendrikstone/argocd_service_playground:0.0.1
+        ports:
+        - containerPort: 3000
+        tty: true
+        stdin: true
+        env:
+          - name: key
+            value: base
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
