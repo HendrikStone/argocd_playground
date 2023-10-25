@@ -6,7 +6,8 @@ spec:
   template:
     spec:
       containers:
-      - name: sample-app
+      - name: backend-service
+        image: ghcr.io/hendrikstone/argocd_service_playground:v0.0.1
         env:
         - name: key
           value: dev
