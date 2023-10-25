@@ -11,8 +11,8 @@ spec:
         env:
         - name: key
           value: dev
-#        envFrom:
-#          - configMapRef:
-#              name: app-config
-#          - secretRef:
-#              name: credentials
+        envFrom:
+        - configMapRef:
+            name: app-config
+        - secretRef:
+            name: credentials
