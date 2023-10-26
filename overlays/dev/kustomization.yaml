@@ -8,11 +8,12 @@ namespace: sample-app
 
 nameSuffix: -dev
 
-patches:
-- path: deployment_env.yaml
+# patches:
+# - path: deployment_env.yaml
 
-# patchesStrategicMerge:
-# - deployment_env.yaml
+patchesStrategicMerge:
+- deployment_env.yaml
+- deployment_replicas.yaml
 
 
 # configMapGenerator:
