@@ -3,6 +3,6 @@ kind: Kustomization
 
 resources:
 - deployment.yaml
-- sample-backend.yaml
+# - sample-backend.yaml
 - skipper-deamonset.yaml
 # - ingress-networking.yaml
