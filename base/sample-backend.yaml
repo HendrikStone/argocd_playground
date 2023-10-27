@@ -4,7 +4,7 @@ metadata:
   name: backend-service
 spec:
   selector:
-  app: sample-app
+  app.kubernetes.io/name: backend-app
   ports:
   - name: http
     port: 3000
