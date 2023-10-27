@@ -5,3 +5,4 @@ resources:
 - deployment.yaml
 - sample-backend.yaml
 - skipper-deamonset.yaml
+- ingress-networking.yaml
