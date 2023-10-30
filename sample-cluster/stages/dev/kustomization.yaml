@@ -1,0 +1,24 @@
+apiVersion: v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+
+namespace: sample-app
+
+nameSuffix: -dev
+
+patchesStrategicMerge:
+- backend_env.yaml
+
+
+# configMapGenerator:
+#   - name: app-config
+#     literals:
+#       - username=demo-user
+
+# secretGenerator:
+#   - name: credentials
+#     type: Opaque
+#     literals:
+#       - password=demo
