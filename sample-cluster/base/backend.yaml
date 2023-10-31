@@ -55,7 +55,6 @@ metadata:
     author: Hendrik Stein <hstein@jastech-solutions.de>
   spec:
     rules:
-    #See /etc/hosts
     - host: sample-app.internal
       http:
         paths:
