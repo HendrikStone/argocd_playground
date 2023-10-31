@@ -54,6 +54,7 @@ metadata:
   annotations:
     author: Hendrik Stein <hstein@jastech-solutions.de>
   spec:
+    ingressClassName: skipper-ingress
     rules:
     - host: sample-app.internal
       http:
