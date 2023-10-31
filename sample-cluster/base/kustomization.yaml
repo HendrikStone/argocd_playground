@@ -5,4 +5,3 @@ resources:
 - namespace.yaml
 - backend.yaml
 - skipper-deamonset.yaml
-- skipper-networking.yaml

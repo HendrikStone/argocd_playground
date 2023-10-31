@@ -45,4 +45,24 @@ spec:
   - name: http
     port: 80
     targetPort: http #This must match the name of the port in the container(byName)
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend-app
+  namespace: sample-app
+  annotations:
+    author: Hendrik Stein <hstein@jastech-solutions.de>
+  spec:
+    rules:
+    - host: sample-app.internal
+      http:
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: backend-app
+              port:
+                number: 80
 
