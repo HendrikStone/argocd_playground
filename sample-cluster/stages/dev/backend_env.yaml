@@ -5,6 +5,11 @@ metadata:
   namespace: sample-app
 spec:
   replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1 # wieviele zusätzliche für zero downtime
+      maxUnavailable: 0
   selector:
     matchLabels:
       app: backend-app
@@ -16,6 +21,23 @@ spec:
         env:
         - name: key
           value: dev
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m" # minimum 0.25 CPU
+          limits:
+            memory: "128Mi"
+            cpu: "1000m" # maximal 1 CPU
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: 10
 #        envFrom:
 #        - configMapRef:
 #            name: app-config
