@@ -59,7 +59,7 @@ metadata:
       http:
         paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
           backend:
             service:
               name: backend-app
