@@ -41,7 +41,6 @@ spec:
         args:
         - "skipper"
         - "-kubernetes"
-        - "-kubernetes-ingress-v1"
         - "-kubernetes-in-cluster"
         - "-kubernetes-path-mode=path-prefix"
         - "-address=:9999"

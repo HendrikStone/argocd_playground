@@ -1,22 +1,22 @@
-apiVersion: policy/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: hostnetwork
-spec:
-  hostNetwork: true
-  hostPorts:
-  - max: 10000
-    min: 50
-  supplementalGroups:
-    rule: RunAsAny
-  fsGroup:
-    rule: RunAsAny
-  runAsUser:
-    # Require the container to run without root privileges.
-    rule: 'MustRunAsNonRoot'
-  seLinux:
-    rule: RunAsAny
----
+#apiVersion: policy/v1beta1
+#kind: PodSecurityPolicy
+#metadata:
+#  name: hostnetwork
+#spec:
+#  hostNetwork: true
+#  hostPorts:
+#  - max: 10000
+#    min: 50
+#  supplementalGroups:
+#    rule: RunAsAny
+#  fsGroup:
+#    rule: RunAsAny
+#  runAsUser:
+# Require the container to run without root privileges.
+#    rule: 'MustRunAsNonRoot'
+#  seLinux:
+#    rule: RunAsAny
+#---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -50,28 +50,28 @@ rules:
   - get
   - list
 - apiGroups:
-    - extensions
+  - extensions
   resources:
-    - ingresses
+  - ingresses
   verbs:
-    - get
-    - list
+  - get
+  - list
 - apiGroups: [""]
   resources:
-    - namespaces
-    - services
-    - endpoints
-    - pods
+  - namespaces
+  - services
+  - endpoints
+  - pods
   verbs:
-    - get
-    - list
+  - get
+  - list
 - apiGroups:
-    - discovery.k8s.io
+  - discovery.k8s.io
   resources:
-    - endpointslices
+  - endpointslices
   verbs:
-    - get
-    - list
+  - get
+  - list
 - apiGroups:
   - zalando.org
   resources:
