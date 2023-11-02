@@ -4,9 +4,11 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - backend.yaml
-- skipper/rbac.yaml
-- skipper/deployment.yaml
-- skipper/hpa.yaml
-- skipper/service.yaml
+- skipper/daemonset/daemonset.yaml
+- skipper/daemonset/rbac.yaml
+#- skipper/deployment/rbac.yaml
+#- skipper/deployment/deployment.yaml
+#- skipper/deployment/hpa.yaml
+#- skipper/deployment/service.yaml
 
 # - skipper-deamonset.yaml
