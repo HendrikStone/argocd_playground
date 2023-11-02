@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       name: skipper-ingress
+      namespace: sample-app
       labels:
         application: skipper-ingress
         version: v0.11.1

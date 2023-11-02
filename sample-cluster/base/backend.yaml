@@ -50,6 +50,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: backend-app
+  namespace: sample-app
 spec:
   rules:
   - host: sample-app.internal
