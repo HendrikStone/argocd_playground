@@ -53,7 +53,7 @@ metadata:
   namespace: sample-app
 spec:
   rules:
-  - host: backend.sample-app.internal
+  - host: backend-sample-app.dev
     http:
       paths:
       - backend:
