@@ -53,8 +53,8 @@ metadata:
   namespace: sample-app
 spec:
   rules:
-  - host: backend-sample-app.dev
-    http:
+  #- host: backend-sample-app.dev
+  - http:
       paths:
       - path: /
         pathType: Prefix
@@ -69,46 +69,46 @@ spec:
 #            port:
 #              number: 80
 #        pathType: ImplementationSpecific
----
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
-metadata:
-  name: backend-app
-  namespace: sample-app
-spec:
-  entryPoints:
-  - backend-app
-  routes:
-  - kind: Rule
-    match: Host(`backend-sample-app.dev`)
-    middlewares:
-    - name: middleware1
-      namespace: default
-    priority: 10
-    services:
-    - kind: Service
-      name: backend-app
-      namespace: default
-      passHostHeader: true
-      port: 80
-      responseForwarding:
-        flushInterval: 1ms
-      scheme: https
-      sticky:
-        cookie:
-          httpOnly: true
-          name: cookie
-          secure: true
-      strategy: RoundRobin
-      weight: 10
----
-# All resources definition must be declared
-# Prefixing with /backend-app
-apiVersion: traefik.io/v1alpha1
-kind: Middleware
-metadata:
-  name: backend-app
-  namespace: sample-app
-spec:
-  addPrefix:
-    prefix: /backend-app
+# ---
+# apiVersion: traefik.io/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: backend-app
+#   namespace: sample-app
+# spec:
+#   entryPoints:
+#   - backend-app
+#   routes:
+#   - kind: Rule
+#     match: Host(`backend-sample-app.dev`)
+#     middlewares:
+#     - name: middleware1
+#       namespace: default
+#     priority: 10
+#     services:
+#     - kind: Service
+#       name: backend-app
+#       namespace: default
+#       passHostHeader: true
+#       port: 80
+#       responseForwarding:
+#         flushInterval: 1ms
+#       scheme: https
+#       sticky:
+#         cookie:
+#           httpOnly: true
+#           name: cookie
+#           secure: true
+#       strategy: RoundRobin
+#       weight: 10
+# ---
+# # All resources definition must be declared
+# # Prefixing with /backend-app
+# apiVersion: traefik.io/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: backend-app
+#   namespace: sample-app
+# spec:
+#   addPrefix:
+#     prefix: /backend-app
