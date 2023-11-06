@@ -56,10 +56,17 @@ spec:
   - host: backend-sample-app.dev
     http:
       paths:
-      - backend:
+      - path: /backend
+        pathType: Prefix
+        backend:
           service:
             name: backend-app
             port:
               number: 80
-        pathType: ImplementationSpecific
+#      - backend:
+#          service:
+#            name: backend-app
+#            port:
+#              number: 80
+#        pathType: ImplementationSpecific
 

@@ -3,7 +3,15 @@ kind: Kustomization
 
 resources:
 - namespace.yaml
+# Traefik
+- traefik/00-role.yaml
+- traefik/00-account.yaml
+- traefik/01-role-binding.yaml
+- traefik/02-traefik.yaml
+- traefik/02-traefik-services.yaml
+# Business applications
 - backend.yaml
+
 # Skipper Daemonset
 # - skipper/daemonset/daemonset.yaml
 # - skipper/daemonset/rbac.yaml
