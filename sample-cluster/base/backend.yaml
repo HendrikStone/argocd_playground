@@ -76,7 +76,8 @@ metadata:
   name: backend-app
   namespace: sample-app
 spec:
-  entryPoints: -backend-app
+  entryPoints:
+  - backend-app
   routes:
   - kind: Rule
     match: Host(`backend-sample-app.dev`)
