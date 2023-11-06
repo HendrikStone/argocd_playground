@@ -53,8 +53,8 @@ metadata:
   namespace: sample-app
 spec:
   rules:
-  #- host: backend-sample-app.dev
-  - http:
+  - host: backend-sample-app.dev
+    http:
       paths:
       - path: /
         pathType: Prefix
