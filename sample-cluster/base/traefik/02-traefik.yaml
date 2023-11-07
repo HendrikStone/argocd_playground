@@ -23,7 +23,13 @@ spec:
         # - --configfile=/config/static-config.yaml
         - --log.level=DEBUG
         - --api.insecure
+        - --entrypoints.web.address=:80
         - --providers.kubernetesingress
+        - --providers.kubernetesingress.ingressclass=traefik
+        - --providers.kubernetesingress.namespaces=default,sample-app
+        - --providers.kubernetescrd
+        - --providers.kubernetescrd.ingressclass=traefik
+        - --providers.kubernetescrd.namespaces=default,sample-app
         ports:
         - name: web
           containerPort: 80
