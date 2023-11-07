@@ -1,0 +1,32 @@
+entryPoints:
+  ping:
+    address: ':5555'
+  web:
+    address: ':80'
+    forwardedHeaders:
+      insecure: true
+  websecure:
+    address: ':443'
+api:
+  dashboard: true
+  insecure: true
+ping:
+  entryPoint: ping
+log:
+  level: DEBUG
+  format: json
+accessLog: {}
+providers:
+  kubernetesIngress:
+    namespaces:
+    - default
+    - sample-app
+    disablePassHostHeaders: false
+    ingressClass: traefik
+  kubernetesCRD:
+    throttleDuration: 2s
+    namespaces:
+    - default
+    - sample-app
+    disablePassHostHeaders: false
+    ingressClass: traefik

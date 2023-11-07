@@ -53,7 +53,7 @@ metadata:
   namespace: sample-app
 spec:
   entryPoints:
-  - http
+  - web
   routes:
   - kind: Rule
     match: PathPrefix(`/backend-app`)
