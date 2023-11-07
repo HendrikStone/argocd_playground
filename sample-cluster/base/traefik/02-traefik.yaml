@@ -20,10 +20,10 @@ spec:
       - name: traefik
         image: traefik:v2.10
         args:
-        - --configfile=/config/static-config.yaml
-        # - --log.level=DEBUG
-        # - --api.insecure
-        # - --providers.kubernetesingress
+        # - --configfile=/config/static-config.yaml
+        - --log.level=DEBUG
+        - --api.insecure
+        - --providers.kubernetesingress
         ports:
         - name: web
           containerPort: 80
