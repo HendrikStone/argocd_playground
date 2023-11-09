@@ -31,3 +31,19 @@ rules:
   - ingresses/status
   verbs:
   - update
+- apiGroups:
+  - traefik.containo.us
+  resources:
+  - middleware
+  - middlewaretcps
+  - ingressroutes
+  - traefikservices
+  - ingressroutetcps
+  - ingressrouteudps
+  - tlsoptions
+  - tlsstores
+  - serverstransports
+  verbs:
+  - get
+  - list
+  - watch
