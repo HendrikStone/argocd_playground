@@ -28,8 +28,8 @@ spec:
         # - --providers.kubernetesingress.ingressclass=traefik
         # - --providers.kubernetesingress.namespaces=default,sample-app
         - --providers.kubernetescrd
-        - --providers.kubernetescrd.ingressclass=traefik
-        - --providers.kubernetescrd.namespaces=default,sample-app
+        # - --providers.kubernetescrd.ingressclass=traefik
+        # - --providers.kubernetescrd.namespaces=default,sample-app
         ports:
         - name: web
           containerPort: 80
