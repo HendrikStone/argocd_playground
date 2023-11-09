@@ -32,9 +32,10 @@ rules:
   verbs:
   - update
 - apiGroups:
+  - traefik.io
   - traefik.containo.us
   resources:
-  - middleware
+  - middlewares
   - middlewaretcps
   - ingressroutes
   - traefikservices
