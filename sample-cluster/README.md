@@ -81,3 +81,6 @@ kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.10/docs/co
 
 # Install RBAC for Traefik:
 kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.10/docs/content/reference/dynamic-configuration/kubernetes-crd-rbac.yml
+
+6. Sample Traefik
+https://github.com/paulraj/traefik-tutorial
