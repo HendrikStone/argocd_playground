@@ -12,15 +12,3 @@ resources:
 - traefik/02-traefik-services.yaml
 # Business applications
 - backend.yaml
-
-# Skipper Daemonset
-# - skipper/daemonset/daemonset.yaml
-# - skipper/daemonset/rbac.yaml
-
-# Skipper Deployment
-#- skipper/deployment/rbac.yaml
-#- skipper/deployment/deployment.yaml
-#- skipper/deployment/hpa.yaml
-#- skipper/deployment/service.yaml
-
-# - skipper-deamonset.yaml
