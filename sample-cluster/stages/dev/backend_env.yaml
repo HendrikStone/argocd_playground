@@ -56,7 +56,7 @@ spec:
   - web
   routes:
   - kind: Rule
-    match: PathPrefix(`/backend-app`)
+    match: PathPrefix(`/backend-app`) && Method(`POST`)
     middlewares:
     - name: backend-app-dev
       namespace: sample-app
