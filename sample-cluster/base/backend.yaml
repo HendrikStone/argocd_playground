@@ -64,7 +64,7 @@ spec:
       namespace: sample-app
     priority: 10
     services:
-    - name: backend-app
+    - name: backend-app-dev
       namespace: sample-app
       port: 80
       # - kind: Service
