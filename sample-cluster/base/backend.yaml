@@ -58,7 +58,7 @@ spec:
   - web
   routes:
   - kind: Rule
-    match: PathPrefix(`/backend-app`)
+    match: PathPrefix(`/backend-app`) && Method(`GET`) #https://doc.traefik.io/traefik/routing/routers/
     middlewares:
     - name: backend-app
       namespace: sample-app
