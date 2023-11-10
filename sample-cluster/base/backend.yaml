@@ -60,7 +60,7 @@ spec:
   - kind: Rule
     match: PathPrefix(`/backend-app`)
     middlewares:
-    - name: backend-app
+    - name: backend-app-dev
       namespace: sample-app
     priority: 10
     services:
