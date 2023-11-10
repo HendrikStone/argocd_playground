@@ -51,6 +51,8 @@ kind: IngressRoute
 metadata:
   name: backend-app
   namespace: sample-app
+  annotations:
+    kubernetes.io/ingress.class: traefik
 spec:
   entryPoints:
   - web
