@@ -62,10 +62,13 @@ spec:
       namespace: sample-app
     priority: 10
     services:
-    - kind: Service
-      name: backend-app
+    - name: backend-app
       namespace: sample-app
-      passHostHeader: true
+      port: 80
+      # - kind: Service
+      #   name: backend-app
+      #   namespace: sample-app
+      #   passHostHeader: true
 ---
 # All resources definition must be declared
 # Prefixing with /backend-app
